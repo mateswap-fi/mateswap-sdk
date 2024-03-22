@@ -4,8 +4,8 @@ import { BigNumber } from '@ethersproject/bignumber'
 
 describe('Limit Order', () => {
   it('should create Limit Order', async () => {
-    let tokenA = new Token(ChainId.DOGECHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18, 'DAI')
-    let tokenB = new Token(ChainId.DOGECHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18, 'SUSHI')
+    let tokenA = new Token(ChainId.LACHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18, 'DAI')
+    let tokenB = new Token(ChainId.LACHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18, 'SUSHI')
 
     const amountIn = CurrencyAmount.fromRawAmount(tokenA, '9000000000000000000')
     const amountOut = CurrencyAmount.fromRawAmount(tokenB, '8000000000000000000')
@@ -24,7 +24,7 @@ describe('Limit Order', () => {
     )
 
     const carol = '0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a'
-    const { v, r, s } = limitOrder.signdOrderWithPrivatekey(ChainId.DOGECHAIN, carol)
+    const { v, r, s } = limitOrder.signdOrderWithPrivatekey(ChainId.LACHAIN, carol)
     expect(v).toEqual(27)
     expect(r).toEqual('0x711b4c27016d790b188e5cef55e9468aabb51fbdaa37900ce5cc0b6fe7386678')
     expect(s).toEqual('0x285e2469a47086ab79a152125337297579c23faca9c30ab60237430e99357677')
@@ -38,8 +38,8 @@ describe('Limit Order', () => {
     const tokenOutAddress = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa'
     const amountInRaw = '19999999999999898'
     const amountOutRaw = '53999999999999724600'
-    const tokenIn = new Token(ChainId.DOGECHAIN, tokenInAddress, 18)
-    const dai = new Token(ChainId.DOGECHAIN, tokenOutAddress, 18)
+    const tokenIn = new Token(ChainId.LACHAIN, tokenInAddress, 18)
+    const dai = new Token(ChainId.LACHAIN, tokenOutAddress, 18)
     const amountIn = CurrencyAmount.fromRawAmount(tokenIn, amountInRaw)
     const amountOut = CurrencyAmount.fromRawAmount(dai, amountOutRaw)
     const stopPrice = '0'
@@ -90,8 +90,8 @@ describe('Limit Order', () => {
   })
 
   it('should use price correctly', () => {
-    const tokenA = new Token(ChainId.DOGECHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18)
-    const tokenB = new Token(ChainId.DOGECHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18)
+    const tokenA = new Token(ChainId.LACHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18)
+    const tokenB = new Token(ChainId.LACHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18)
 
     const amountIn = CurrencyAmount.fromRawAmount(tokenA, '9000000000000000000')
     const amountOut = CurrencyAmount.fromRawAmount(tokenB, '8000000000000000000')
@@ -114,8 +114,8 @@ describe('Limit Order', () => {
   })
 
   it('should create limit order and return data to sign', () => {
-    const tokenA = new Token(ChainId.DOGECHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18, 'DAI')
-    const tokenB = new Token(ChainId.DOGECHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18, 'SUSHI')
+    const tokenA = new Token(ChainId.LACHAIN, '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9', 18, 'DAI')
+    const tokenB = new Token(ChainId.LACHAIN, '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9', 18, 'SUSHI')
 
     const amountIn = CurrencyAmount.fromRawAmount(tokenA, '9000000000000000000')
     const amountOut = CurrencyAmount.fromRawAmount(tokenB, '8000000000000000000')
@@ -137,8 +137,8 @@ describe('Limit Order', () => {
   })
 
   it('should fill the limit order', () => {
-    const tokenA = new Token(ChainId.DOGECHAIN, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI')
-    const tokenB = new Token(ChainId.DOGECHAIN, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 18, 'USDC')
+    const tokenA = new Token(ChainId.LACHAIN, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI')
+    const tokenB = new Token(ChainId.LACHAIN, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 18, 'UXD')
 
     const amountIn = CurrencyAmount.fromRawAmount(tokenA, '9000000000000000000')
     const amountOut = CurrencyAmount.fromRawAmount(tokenB, '8000000000000000000')
@@ -157,7 +157,7 @@ describe('Limit Order', () => {
     )
 
     const carol = '0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a'
-    limitOrder.signdOrderWithPrivatekey(ChainId.DOGECHAIN, carol)
+    limitOrder.signdOrderWithPrivatekey(ChainId.LACHAIN, carol)
 
     new FillLimitOrder(
       limitOrder,

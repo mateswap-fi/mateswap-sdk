@@ -1,18 +1,16 @@
 {
-  "name": "@boneswapfi/sdk",
+  "name": "@mateswapfi/sdk",
   "license": "MIT",
-  "version": "0.0.29",
-  "description": "🛠 An SDK for building applications on top of BoneSwap.",
+  "version": "0.0.1",
+  "description": "🛠 An SDK for building applications on top of MateSwap.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/boneswap-fi/boneswap-sdk",
+  "repository": "https://github.com/mateswap-fi/mateswap-sdk",
   "keywords": [
-    "boneswap",
-    "doge",
-    "dogechain",
+    "mateswap",
     "sdk"
   ],
   "module": "dist/sdk.esm.js",
@@ -50,7 +48,7 @@
     "eip-712": "^0.4.3"
   },
   "devDependencies": {
-    "@boneswapfi/core": "^0.0.4",
+
     "@ethersproject/abi": "^5.4.0",
     "@ethersproject/abstract-signer": "^5.4.0",
     "@ethersproject/address": "^5.4.0",

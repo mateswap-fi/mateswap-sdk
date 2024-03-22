@@ -1,30 +1,23 @@
-import { USDC_ADDRESS, USDT_ADDRESS, WWDOGE_ADDRESS } from './addresses'
+import { UXD_ADDRESS, WLAC_ADDRESS } from './addresses'
 
 import { ChainId } from '../enums'
 import { Token } from '../entities/Token'
 import { TokenMap } from '../types/TokenMap'
 
-export const USDC: TokenMap = {
-  [ChainId.DOGECHAIN]: new Token(ChainId.DOGECHAIN, USDC_ADDRESS[ChainId.DOGECHAIN], 6, 'USDC', 'USDC token'),
-  [ChainId.DOGECHAIN_TESTNET]: new Token(ChainId.DOGECHAIN_TESTNET, USDC_ADDRESS[ChainId.DOGECHAIN_TESTNET], 6, 'USDC', 'USDC token')
+
+// UXD
+// https://explorer.lachain.network/token/0xDe09E74d4888Bc4e65F589e8c13Bce9F71DdF4c7/
+export const UXD: TokenMap = {
+  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, UXD_ADDRESS[ChainId.LACHAIN], 18, 'UXD', 'UXD token'),
+  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, UXD_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'UXD', 'UXD token')
 }
 
-export const USDT: TokenMap = {
-  [ChainId.DOGECHAIN]: new Token(ChainId.DOGECHAIN, USDT_ADDRESS[ChainId.DOGECHAIN], 6, 'USDT', 'USDT token'),
-  [ChainId.DOGECHAIN_TESTNET]: new Token(ChainId.DOGECHAIN_TESTNET, USDT_ADDRESS[ChainId.DOGECHAIN_TESTNET], 6, 'USDT', 'USDT token')
+export const WLAC: TokenMap = {
+  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, WLAC_ADDRESS[ChainId.LACHAIN], 18, 'WLAC', 'Wrapped LAC'),
+  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, WLAC_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'WLAC', 'Wrapped LAC')
 }
-
-export const WWDOGE: TokenMap = {
-  [ChainId.DOGECHAIN]: new Token(ChainId.DOGECHAIN, WWDOGE_ADDRESS[ChainId.DOGECHAIN], 18, 'WWDOGE', 'Wrapped Doge'),
-  [ChainId.DOGECHAIN_TESTNET]: new Token(ChainId.DOGECHAIN_TESTNET, WWDOGE_ADDRESS[ChainId.DOGECHAIN_TESTNET], 18, 'WWDOGE', 'Wrapped Doge')
-}
-
-// export const WNATIVE: TokenMap = {
-//   [ChainId.DOGECHAIN]: new Token(ChainId.DOGECHAIN, WWDOGE_ADDRESS[ChainId.DOGECHAIN], 18, 'WDOGE', 'Doge'),
-//   [ChainId.DOGECHAIN_TESTNET]: new Token(ChainId.DOGECHAIN_TESTNET, WWDOGE_ADDRESS[ChainId.DOGECHAIN_TESTNET], 18, 'WDOGE', 'Doge')
-// }
 
 export const WNATIVE: TokenMap = {
-  [ChainId.DOGECHAIN]: WWDOGE[ChainId.DOGECHAIN],
-  [ChainId.DOGECHAIN_TESTNET]: WWDOGE[ChainId.DOGECHAIN_TESTNET]
+  [ChainId.LACHAIN]: WLAC[ChainId.LACHAIN],
+  [ChainId.LACHAIN_TESTNET]: WLAC[ChainId.LACHAIN_TESTNET]
 }

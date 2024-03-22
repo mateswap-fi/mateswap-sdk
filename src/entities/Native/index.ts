@@ -1,2 +1,2 @@
 // Native exports
-export { Dogechain } from './Dogechain'
+export { Lachain } from './Lachain'

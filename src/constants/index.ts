@@ -7,10 +7,10 @@ export * from './natives'
 export * from './numbers'
 export * from './tokens'
 
-//TODO(ILoveBones)
+//TODO(Matienzo)
 export const INIT_CODE_HASH: { [chainId: number]: string } = {
-  [ChainId.DOGECHAIN]:       '0x01ce69082153fd3a909b4fa249d44516d542bab9c4626d8cc023635b2256cffc',
-  [ChainId.DOGECHAIN_TESTNET]: '0x01ce69082153fd3a909b4fa249d44516d542bab9c4626d8cc023635b2256cffc',
+  [ChainId.LACHAIN]:       '0xacca68b46e4aa677641d8d20d81c9f4b252af83de62ff9e2fb58a9b648ee3537',
+  [ChainId.LACHAIN_TESTNET]: '0xacca68b46e4aa677641d8d20d81c9f4b252af83de62ff9e2fb58a9b648ee3537',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

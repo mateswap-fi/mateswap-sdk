@@ -1,12 +1,12 @@
-import { CurrencyAmount, Dogechain, Pair, Route, Token } from './index'
+import { CurrencyAmount, Lachain, Pair, Route, Token } from './index'
 
-import { WWDOGE } from '../constants'
+import { WLAC } from '../constants'
 
 describe('Route', () => {
-  const WDOGE = Dogechain.onChain(2000)
-  const token0 = new Token(2000, '0x0000000000000000000000000000000000000001', 18, 't0')
-  const token1 = new Token(2000, '0x0000000000000000000000000000000000000002', 18, 't1')
-  const weth = WWDOGE[2000]
+  const LAC = Lachain.onChain(274)
+  const token0 = new Token(274, '0x0000000000000000000000000000000000000001', 18, 't0')
+  const token1 = new Token(274, '0x0000000000000000000000000000000000000002', 18, 't1')
+  const weth = WLAC[274]
   const pair_0_1 = new Pair(CurrencyAmount.fromRawAmount(token0, '100'), CurrencyAmount.fromRawAmount(token1, '200'))
   const pair_0_weth = new Pair(CurrencyAmount.fromRawAmount(token0, '100'), CurrencyAmount.fromRawAmount(weth, '100'))
   const pair_1_weth = new Pair(CurrencyAmount.fromRawAmount(token1, '175'), CurrencyAmount.fromRawAmount(weth, '100'))
@@ -17,7 +17,7 @@ describe('Route', () => {
     expect(route.path).toEqual([token0, token1])
     expect(route.input).toEqual(token0)
     expect(route.output).toEqual(token1)
-    expect(route.chainId).toEqual(2000)
+    expect(route.chainId).toEqual(274)
   })
 
   it('can have a token as both input and output', () => {
@@ -28,16 +28,16 @@ describe('Route', () => {
   })
 
   it('supports ether input', () => {
-    const route = new Route([pair_0_weth], WDOGE, token0)
+    const route = new Route([pair_0_weth], LAC, token0)
     expect(route.pairs).toEqual([pair_0_weth])
-    expect(route.input).toEqual(WDOGE)
+    expect(route.input).toEqual(LAC)
     expect(route.output).toEqual(token0)
   })
 
   it('supports ether output', () => {
-    const route = new Route([pair_0_weth], token0, WDOGE)
+    const route = new Route([pair_0_weth], token0, LAC)
     expect(route.pairs).toEqual([pair_0_weth])
     expect(route.input).toEqual(token0)
-    expect(route.output).toEqual(WDOGE)
+    expect(route.output).toEqual(LAC)
   })
 })

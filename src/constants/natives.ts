@@ -1,8 +1,8 @@
-import { Dogechain } from '../entities/Native'
+import { Lachain } from '../entities/Native'
 
 import { ChainId } from '../enums'
 
 export const NATIVE = {
-  [ChainId.DOGECHAIN]: Dogechain.onChain(ChainId.DOGECHAIN),
-  [ChainId.DOGECHAIN_TESTNET]: Dogechain.onChain(ChainId.DOGECHAIN_TESTNET)
+  [ChainId.LACHAIN]: Lachain.onChain(ChainId.LACHAIN),
+  [ChainId.LACHAIN_TESTNET]: Lachain.onChain(ChainId.LACHAIN_TESTNET)
 }
