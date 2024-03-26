@@ -23,29 +23,29 @@ describe('Token', () => {
 
   describe('#equals', () => {
     it('fails if address differs', () => {
-      expect(new Token(2000, ADDRESS_ONE, 18).equals(new Token(2000, ADDRESS_TWO, 18))).toBe(false)
+      expect(new Token(274, ADDRESS_ONE, 18).equals(new Token(274, ADDRESS_TWO, 18))).toBe(false)
     })
 
     it('false if chain id differs', () => {
-      expect(new Token(568, ADDRESS_ONE, 18).equals(new Token(2000, ADDRESS_ONE, 18))).toBe(false)
+      expect(new Token(568, ADDRESS_ONE, 18).equals(new Token(274, ADDRESS_ONE, 18))).toBe(false)
     })
 
     it('true if only decimals differs', () => {
-      expect(new Token(2000, ADDRESS_ONE, 9).equals(new Token(2000, ADDRESS_ONE, 18))).toBe(true)
+      expect(new Token(274, ADDRESS_ONE, 9).equals(new Token(274, ADDRESS_ONE, 18))).toBe(true)
     })
 
     it('true if address is the same', () => {
-      expect(new Token(2000, ADDRESS_ONE, 18).equals(new Token(2000, ADDRESS_ONE, 18))).toBe(true)
+      expect(new Token(274, ADDRESS_ONE, 18).equals(new Token(274, ADDRESS_ONE, 18))).toBe(true)
     })
 
     it('true on reference equality', () => {
-      const token = new Token(2000, ADDRESS_ONE, 18)
+      const token = new Token(274, ADDRESS_ONE, 18)
       expect(token.equals(token)).toBe(true)
     })
 
     it('true even if name/symbol/decimals differ', () => {
-      const tokenA = new Token(2000, ADDRESS_ONE, 9, 'abc', 'def')
-      const tokenB = new Token(2000, ADDRESS_ONE, 18, 'ghi', 'jkl')
+      const tokenA = new Token(274, ADDRESS_ONE, 9, 'abc', 'def')
+      const tokenB = new Token(274, ADDRESS_ONE, 18, 'ghi', 'jkl')
       expect(tokenA.equals(tokenB)).toBe(true)
     })
   })

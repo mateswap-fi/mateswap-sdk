@@ -943,13 +943,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@boneswapfi/core@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@boneswapfi/core/-/core-0.0.4.tgz#5be0e3550993c3894de60ae4cdac216fbcb6d2fa"
-  integrity sha512-fONgjPpU4Plh8aOxly1S08vfPv6g9SbDwny5jDp9IaRV0QjNOuOUYjaPTIXJaKdtm7oD7Ilejj7+thuxrRfiCA==
-  dependencies:
-    eip-712 "^0.4.3"
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"

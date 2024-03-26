@@ -1,15 +1,15 @@
-import { CurrencyAmount, Dogechain, Percent, Price, Token, TradeWalker } from '.'
+import { CurrencyAmount, Lachain, Percent, Price, Token, TradeWalker } from '.'
 
 import JSBI from 'jsbi'
 
 describe('TradeWalker', () => {
-  const ETHER = Dogechain.onChain(2000)
+  const ETHER = Lachain.onChain(274)
   const token0 = new Token(10000, '0x0000000000000000000000000000000000000001', 18, 't0')
   const token2 = new Token(10000, '0x0000000000000000000000000000000000000003', 18, 't2')
 
   it('can be constructed with ETHER as input', () => {
     const trade = new TradeWalker(
-      CurrencyAmount.fromRawAmount(Dogechain.onChain(2000), JSBI.BigInt(100)),
+      CurrencyAmount.fromRawAmount(Lachain.onChain(274), JSBI.BigInt(100)),
       CurrencyAmount.fromRawAmount(token0, JSBI.BigInt(100)),
       [],
       1
@@ -21,7 +21,7 @@ describe('TradeWalker', () => {
   it('can be constructed with ETHER as output for exact input', () => {
     const trade = new TradeWalker(
       CurrencyAmount.fromRawAmount(token0, JSBI.BigInt(100)),
-      CurrencyAmount.fromRawAmount(Dogechain.onChain(2000), JSBI.BigInt(100)),
+      CurrencyAmount.fromRawAmount(Lachain.onChain(274), JSBI.BigInt(100)),
       [],
       1
     )

@@ -1,8 +1,8 @@
-# BoneSwap SDK
+# MateSwap SDK
 
 In-depth documentation on this SDK is available at [uniswap.org](https://uniswap.org/docs/v2/SDK/getting-started/).
 
-This modifies uniswap-sdk's UniswapV2Factory address. The new address for boneswap is `0x000`.
+This modifies uniswap-sdk's UniswapV2Factory address. The new address for mateswap is `0x000`.
 
 ## Running tests
 
@@ -11,13 +11,13 @@ To run the tests, follow these steps. You must have at least node v10 and [yarn]
 First clone the repository:
 
 ```sh
-git clone https://github.com/boneswap-fi/boneswap-sdk.git
+git clone https://github.com/mateswap-fi/mateswap-sdk.git
 ```
 
-Move into the boneswap-sdk working directory
+Move into the mateswap-sdk working directory
 
 ```sh
-cd boneswap-sdk/
+cd mateswap-sdk/
 ```
 
 Install dependencies

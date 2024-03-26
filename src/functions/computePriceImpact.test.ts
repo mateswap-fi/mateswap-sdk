@@ -1,18 +1,18 @@
-import { CurrencyAmount, Dogechain, Percent, Price, Token } from '../entities'
+import { CurrencyAmount, Lachain, Percent, Price, Token } from '../entities'
 import { computePriceImpact } from './computePriceImpact'
 
 describe('#computePriceImpact', () => {
   const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
   const ADDRESS_ONE = '0x0000000000000000000000000000000000000001'
 
-  const t0 = new Token(2000, ADDRESS_ZERO, 18)
-  const t1 = new Token(2000, ADDRESS_ONE, 18)
+  const t0 = new Token(274, ADDRESS_ZERO, 18)
+  const t1 = new Token(274, ADDRESS_ONE, 18)
 
   it('is correct for zero', () => {
     expect(
       computePriceImpact(
-        new Price(Dogechain.onChain(2000), t0, 10, 100),
-        CurrencyAmount.fromRawAmount(Dogechain.onChain(1), 10),
+        new Price(Lachain.onChain(274), t0, 10, 100),
+        CurrencyAmount.fromRawAmount(Lachain.onChain(1), 10),
         CurrencyAmount.fromRawAmount(t0, 100)
       )
     ).toEqual(new Percent(0, 10000))

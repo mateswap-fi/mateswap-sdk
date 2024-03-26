@@ -40,7 +40,7 @@ export class ConstantProductPool {
       ConstantProductPool.getAddress(currencyAmounts[0].currency, currencyAmounts[1].currency, fee, twap),
       18,
       'BLP',
-      'BONE LP Token'
+      'MATE LP Token'
     )
     this.fee = fee
     this.tokenAmounts = currencyAmounts as [CurrencyAmount<Token>, CurrencyAmount<Token>]

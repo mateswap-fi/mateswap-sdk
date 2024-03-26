@@ -2,7 +2,7 @@ import { CurrencyAmount, Pair, Route, Token, Trade } from '../src/entities'
 
 import JSBI from 'jsbi'
 import { TradeType } from '../src/enums'
-import { WWDOGE as _WWDOGE } from '../src/constants/tokens'
+import { WLAC as _WLAC } from '../src/constants/tokens'
 import invariant from 'tiny-invariant'
 
 const ADDRESSES = [
@@ -11,7 +11,7 @@ const ADDRESSES = [
   '0x0000000000000000000000000000000000000003'
 ]
 const CHAIN_ID = 568
-const WWDOGE = _WWDOGE[568]
+const WLAC = _WLAC[568]
 const DECIMAL_PERMUTATIONS: [number, number, number][] = [
   [0, 0, 0],
   [0, 9, 18],
@@ -43,18 +43,18 @@ describe('entities', () => {
           ),
           new Pair(
             CurrencyAmount.fromRawAmount(tokens[2], decimalize(1, tokens[2].decimals)),
-            CurrencyAmount.fromRawAmount(WWDOGE, decimalize(1234, WWDOGE.decimals))
+            CurrencyAmount.fromRawAmount(WLAC, decimalize(1234, WLAC.decimals))
           )
         ]
       })
 
       let route: Route<Token, Token>
       it('Route', () => {
-        route = new Route(pairs, tokens[0], WWDOGE)
+        route = new Route(pairs, tokens[0], WLAC)
         expect(route.pairs).toEqual(pairs)
-        expect(route.path).toEqual(tokens.concat([WWDOGE]))
+        expect(route.path).toEqual(tokens.concat([WLAC]))
         expect(route.input).toEqual(tokens[0])
-        expect(route.output).toEqual(WWDOGE)
+        expect(route.output).toEqual(WLAC)
       })
 
       it('#midPrice', () => {
@@ -82,14 +82,14 @@ describe('entities', () => {
             [
               new Pair(
                 CurrencyAmount.fromRawAmount(tokens[1], decimalize(5, tokens[1].decimals)),
-                CurrencyAmount.fromRawAmount(WWDOGE, decimalize(10, WWDOGE.decimals))
+                CurrencyAmount.fromRawAmount(WLAC, decimalize(10, WLAC.decimals))
               )
             ],
             tokens[1],
-            WWDOGE
+            WLAC
           )
           const inputAmount = CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))
-          const expectedOutputAmount = CurrencyAmount.fromRawAmount(WWDOGE, '1662497915624478906')
+          const expectedOutputAmount = CurrencyAmount.fromRawAmount(WLAC, '1662497915624478906')
           const trade = new Trade(route, inputAmount, TradeType.EXACT_INPUT)
           expect(trade.route).toEqual(route)
           expect(trade.tradeType).toEqual(TradeType.EXACT_INPUT)
@@ -105,7 +105,7 @@ describe('entities', () => {
         })
 
         it('TradeType.EXACT_OUTPUT', () => {
-          const outputAmount = CurrencyAmount.fromRawAmount(WWDOGE, '1662497915624478906')
+          const outputAmount = CurrencyAmount.fromRawAmount(WLAC, '1662497915624478906')
           const expectedInputAmount = CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))
           const trade = new Trade(route, outputAmount, TradeType.EXACT_OUTPUT)
           expect(trade.route).toEqual(route)
@@ -128,16 +128,16 @@ describe('entities', () => {
                 new Pair(
                   CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals)),
                   CurrencyAmount.fromRawAmount(
-                    WWDOGE,
+                    WLAC,
                     JSBI.add(
-                      decimalize(10, WWDOGE.decimals),
+                      decimalize(10, WLAC.decimals),
                       tokens[1].decimals === 9 ? JSBI.BigInt('30090280812437312') : JSBI.BigInt('30090270812437322')
                     )
                   )
                 )
               ],
               tokens[1],
-              WWDOGE
+              WLAC
             )
             const outputAmount = CurrencyAmount.fromRawAmount(tokens[1], '1')
             const trade = new Trade(route, outputAmount, TradeType.EXACT_INPUT)
