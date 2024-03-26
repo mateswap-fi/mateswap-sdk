@@ -41,8 +41,8 @@ describe('computePoolAddress', () => {
     const tokenA = new Token(ChainId.LACHAIN, UXD_ADDRESS[ChainId.LACHAIN], 18, 'UXD', 'UXD token')
     const tokenB = new Token(ChainId.LACHAIN, WLAC_ADDRESS[ChainId.LACHAIN], 18, 'WLAC', 'Wrapped LAC')
 
-    expect(tokenA.address).toEqual('0x7b2B3C5308ab5b2a1d9a94d20D35CCDf61e05b72')
-    expect(tokenB.address).toEqual('0x0000000000000000000000000000000000002711')
+    expect(tokenA.address).toEqual('0xDe09E74d4888Bc4e65F589e8c13Bce9F71DdF4c7')
+    expect(tokenB.address).toEqual('0x2911a1AB18546cb501628Be8625C7503a2A7DB54')
 
     const fee = 30
 
@@ -62,7 +62,7 @@ describe('computePoolAddress', () => {
     //   INIT_CODE_HASH
     // )
 
-    expect(address).toEqual('0x0fAEf585696341BD02F607a1C617dbAa2bb6381a')
+    expect(address).toEqual('0x32e3a1dD075a8B7335a630f18A43Dd8739494952')
   })
 })
 
