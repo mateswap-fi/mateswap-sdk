@@ -1,7 +1,7 @@
 {
   "name": "@mateswapfi/sdk",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -51,7 +51,7 @@
     "eip-712": "^0.4.3"
   },
   "devDependencies": {
-
+    "@mateswapfi/core": "^0.0.1",
     "@ethersproject/abi": "^5.4.0",
     "@ethersproject/abstract-signer": "^5.4.0",
     "@ethersproject/address": "^5.4.0",
