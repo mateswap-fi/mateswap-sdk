@@ -1532,6 +1532,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mateswapfi/core@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/core/-/core-0.0.1.tgz#ea9172707ebbe16de0e7cdc341eec89b9330d0b7"
+  integrity sha512-stoHcA6kNo1aHmFdOTJfAZoXYhwIuAgy/l0pP8VmagMNnhl4K5aiXhu5GEf3wmAmdBbra2o84Jmf0tyMUCcFMA==
+  dependencies:
+    eip-712 "^0.4.3"
+
 "@rollup/plugin-babel@^5.1.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"

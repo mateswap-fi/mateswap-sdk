@@ -9,8 +9,8 @@ export * from './tokens'
 
 //TODO(Matienzo)
 export const INIT_CODE_HASH: { [chainId: number]: string } = {
-  [ChainId.LACHAIN]:       '0xacca68b46e4aa677641d8d20d81c9f4b252af83de62ff9e2fb58a9b648ee3537',
-  [ChainId.LACHAIN_TESTNET]: '0xacca68b46e4aa677641d8d20d81c9f4b252af83de62ff9e2fb58a9b648ee3537',
+  [ChainId.LACHAIN]:       '0x6fca5a83d9f83cbcddfabddc872eeba60f461fc1bc3621453d1eea5554d73073',
+  [ChainId.LACHAIN_TESTNET]: '0x6fca5a83d9f83cbcddfabddc872eeba60f461fc1bc3621453d1eea5554d73073',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
